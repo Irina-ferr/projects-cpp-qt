@@ -1,3 +1,4 @@
+//2.5
 #include <QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -15,39 +16,38 @@ int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
     int n, m;
 
-    // Ввод ширины и высоты прямоугольника
-    cout << "Enter width (n >= 1): ";
-    cin >> n;
-    cout << "Enter height (m >= 1): ";
+    cout << "Enter width (m >= 1): ";
     cin >> m;
+    cout << "Enter height (n >= 1): ";
+    cin >> n;
 
-    // Проверка корректности входных данных
+    // проверка
     if (n < 1 || m < 1) {
         cerr << "Error: width and height must be >= 1." << endl;
         return 1;
     }
 
 
-    // Создание массива
+    // создание
     char** array = new char*[n];
     for (int i = 0; i < n; ++i) {
         array[i] = new char[m];
     }
 
-    // Заполнение массива
+    // заполнение
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
             if (i == 0 || i == n - 1 || j == 0 || j == m - 1) {
                 array[i][j] = static_cast<char> (219); // Рамка
             } else {
-                array[i][j] = ' '; // Пустое пространство внутри рамки
+                array[i][j] = ' '; // Пустота
             }
         }
     }
 
     show(n, m, array);
 
-    // Освобождение памяти
+    // освобождение памяти
     for (int i = 0; i < n; ++i) {
         delete[] array[i];
     }

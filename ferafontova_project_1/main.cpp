@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    cout << "I am" << endl <<"programming in" << endl << "Qt C++"<< endl;
+    cout << "I am\n" <<"programming in\n" << "Qt C++\n";
 
 
     return a.exec();
