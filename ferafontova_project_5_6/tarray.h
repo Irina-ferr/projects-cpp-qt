@@ -18,7 +18,7 @@ public:
         QStringList elements;
         for (float val : data)
             elements << QString::number(val);
-        qDebug() << "Содержимое массива:" << elements.join(' ');
+        qDebug() << "Array contents:" << elements.join(' ');
     }
     void resize(int newSize) {
         data.resize(newSize);
@@ -28,7 +28,7 @@ public:
         QStringList elements;
         for (float val : data)
             elements << QString::number(val);
-        qDebug() << "Элементы массива:" << elements.join(' ');
+        qDebug() << "Array elements:" << elements.join(' ');
     }
 
     int getSize() const { return data.size(); }
@@ -42,7 +42,7 @@ public:
     bool loadFromFile(const QString& filename) {
         QFile file(filename);
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            qDebug() << "Ошибка открытия файла для чтения!";
+            qDebug() << "Error opening file for reading!";
             return false;
         }
 
@@ -53,7 +53,7 @@ public:
             bool ok;
             float val = line.toFloat(&ok);
             if (ok) data.append(val);
-            else qDebug() << "Некорректное значение:" << line;
+            else qDebug() << "Incorrect value:" << line;
         }
         file.close();
         return true;
@@ -62,7 +62,7 @@ public:
     bool saveToFile(const QString& filename) const {
         QFile file(filename);
         if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-            qDebug() << "Ошибка открытия файла для записи!";
+            qDebug() << "Error opening file for writing!";
             return false;
         }
 

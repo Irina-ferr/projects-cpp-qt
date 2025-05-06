@@ -21,7 +21,7 @@ public:
 
     void print() const override {
         TMean::print();
-        qDebug() << "Дисперсия:" << calculateVariance();
-        qDebug() << "Стандартное отклонение:" << calculateStdDev();
+        qDebug() << "Dispersion:" << calculateVariance();
+        qDebug() << "Standard deviation:" << calculateStdDev();
     }
 };

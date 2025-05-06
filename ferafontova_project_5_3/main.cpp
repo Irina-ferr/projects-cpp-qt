@@ -5,24 +5,24 @@
 int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
     int size;
-    qDebug() << "Введите размер массива:";
+    qDebug() << "Enter the array size:";
     std::cin >> size;
 
     if (size <= 0) {
-        qDebug() << "Некорректный размер массива!";
+        qDebug() << "Incorrect array size!";
         return -1;
     }
 
     TVariance array(size);
 
     for (int i = 0; i < size; ++i) {
-        std::cout << "Введите элемент " << i << ": ";
+        std::cout << "Enter the item " << i << ": ";
         float value;
         std::cin >> value;
         array.setValue(i, value);
     }
 
-    qDebug() << "\nСтатистические характеристики массива:";
+    qDebug() << "\nStatistical characteristics of the array:";
     array.print();
 
     return a.exec();

@@ -16,7 +16,7 @@ public:
         QStringList elements;
         for (float val : data)
             elements << QString::number(val);
-        qDebug() << "Содержимое массива:" << elements.join(' ');
+        qDebug() << "Array contents:" << elements.join(' ');
     }
     void resize(int newSize) {
         data.resize(newSize);
@@ -26,7 +26,7 @@ public:
         QStringList elements;
         for (float val : data)
             elements << QString::number(val);
-        qDebug() << "Элементы массива:" << elements.join(' ');
+        qDebug() << "Array elements:" << elements.join(' ');
     }
 
     int getSize() const { return data.size(); }

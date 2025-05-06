@@ -14,6 +14,6 @@ public:
 
     void print() const override {
         TArray::print();
-        qDebug() << "Среднее значение:" << calculateMean();
+        qDebug() << "Average value:" << calculateMean();
     }
 };
