@@ -6,11 +6,11 @@ int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
     int size;
-    qDebug() << "Введите размер массива:";
+    qDebug() << "Enter the array size:";
     std::cin >> size;
 
     if (size <= 0) {
-        qDebug() << "Ошибка: некорректный размер!";
+        qDebug() << "Error: Invalid size!";
         return -1;
     }
 
@@ -18,14 +18,14 @@ int main(int argc, char *argv[]) {
 
     // Ввод элементов
     for (int i = 0; i < size; ++i) {
-        qDebug() << "Введите элемент" << i << ":";
+        qDebug() << "Enter element" << i << ":";
         float val;
         std::cin >> val;
         arr.setValue(i, val);
     }
 
     // Демонстрация оператора ~
-    qDebug() << "\nТекущие данные:";
+    qDebug() << "\nCurrent data:";
     ~arr;
 
     // Изменение данных
@@ -33,11 +33,11 @@ int main(int argc, char *argv[]) {
     arr.resize(size + 1);
     arr.setValue(size, 100.0f);
 
-    qDebug() << "\nПосле изменений:";
+    qDebug() << "\nAfter changes:";
     ~arr;
 
     // Вывод статистики
-    qDebug() << "\nСтатистика:";
+    qDebug() << "\nStatistics:";
     arr.print();
 
     return a.exec();
